@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="row">
+        <div class="col-sm-12 text-center">
+            <h4 class="bg-primary text-white p-2">Products</h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <table id="products" class="table table-striped table-bordered display" cellspacing="0" width="100%"
+                   data-server-side="true" data-ajax="/api/products/?format=datatables">
+                <thead>
+                <tr>
+                    <th data-data="id">ID</th>
+                    <th data-data="image">Image</th>
+                    <th data-data="title">Title</th>
+                    <th data-data="created_at">Created at</th>
+                    <th data-data="modified_at">Modifed at</th>
+                    <th data-data="description">Description</th>
+                    <th data-data="price">Price</th>
+                </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+{% endblock %}
+{% block extra_js %}
+    {% load static %}
+    <script src="{% static "products/js/product-datatables.js" %}"></script>
+{% endblock %}
