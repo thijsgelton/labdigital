@@ -25,7 +25,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'products.apps.ProductsConfig',
     'versatileimagefield',
-    'crispy_forms'
+    'crispy_forms',
+    'reversion'
 ]
 
 MIDDLEWARE = [
