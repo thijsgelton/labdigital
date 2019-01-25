@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, get_object_or_404, redirect
 from rest_framework import viewsets
 
@@ -6,6 +7,7 @@ from products.serializers import ProductSerializer
 from .models import Product
 
 
+@login_required
 def index(request):
     return render(request, "products/index.html")
 
@@ -15,6 +17,7 @@ class ProductsViewSet(viewsets.ModelViewSet):
     serializer_class = ProductSerializer
 
 
+@login_required
 def details(request, pk):
     product = get_object_or_404(Product, id=pk)
     if request.method == 'POST':
@@ -27,6 +30,7 @@ def details(request, pk):
     return render(request, "products/details.html", context={"form": form, "product": product})
 
 
+@login_required
 def create(request):
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES)
@@ -38,6 +42,7 @@ def create(request):
     return render(request, "products/create.html", context={"form": form})
 
 
+@login_required
 def delete(request, pk):
     product = get_object_or_404(Product, id=pk)
     if request.method == 'POST':
