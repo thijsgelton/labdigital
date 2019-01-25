@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <form action="{% url 'create' %}" method='post' enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.media }}
+        {% crispy form %}
+    </form>
+{% endblock %}
+{% block extra_js %}
+    <script>
+        $(document).ready(function () {
+            $('.datepicker').datepicker();
+        });
+    </script>
+{% endblock %}

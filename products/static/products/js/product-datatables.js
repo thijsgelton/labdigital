@@ -19,7 +19,7 @@ $(document).ready(function () {
             {
                 text: 'New product',
                 action: function (e, dt, node, config) {
-                    window.location = "/new"
+                    window.location = "/create"
                 }
             }
         ]

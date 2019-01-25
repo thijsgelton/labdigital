@@ -10,4 +10,7 @@ router.register(r'products', views.ProductsViewSet)
 urlpatterns = [
     path('api/', include(router.urls)),
     path('', views.index, name='index'),
+    path('create', views.create, name='create'),
+    path('details/<int:pk>', views.details, name='details'),
+    path('delete/<int:pk>', views.delete, name='delete')
 ]

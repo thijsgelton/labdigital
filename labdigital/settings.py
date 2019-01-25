@@ -24,7 +24,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'products.apps.ProductsConfig',
-    'versatileimagefield'
+    'versatileimagefield',
+    'crispy_forms'
 ]
 
 MIDDLEWARE = [
@@ -131,7 +132,7 @@ VERSATILEIMAGEFIELD_SETTINGS = {
     'sized_directory_name': '__sized__',
     'filtered_directory_name': '__filtered__',
     'placeholder_directory_name': '__placeholder__',
-    'create_images_on_demand': False,
+    'create_images_on_demand': True,
     'image_key_post_processor': None,
     'progressive_jpeg': True
 }
